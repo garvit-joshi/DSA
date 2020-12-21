@@ -25,7 +25,7 @@ public class Node {
     }
     public static void rPrint(Node head) {
         /**
-         * Printing the linked list(Recursice)
+         * Printing the linked list(Recursive)
          */
         if (head==null) {
             return;
