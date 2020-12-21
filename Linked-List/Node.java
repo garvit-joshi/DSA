@@ -16,6 +16,11 @@ public class Node {
         /**
          * Printing the linked list(Iterative)
          */
+        if(head==null)
+        {
+            System.out.println("No Data Found");
+            return;
+        }
         Node curr= head;
         while(curr!=null)
         {
