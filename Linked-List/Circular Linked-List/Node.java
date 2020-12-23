@@ -1,14 +1,14 @@
 public class Node {
     /**
      * Node class will be a used to create
-     * Doubly Linked list
+     * Circular Linked list
      * @author Garvit Joshi
      */
     int data;
     Node next;
     Node(int d) {
         data=d;
-        next=null;
+        next=this;
     } 
     public static void printList(Node head) {
         /**
