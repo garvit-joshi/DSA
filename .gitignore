@@ -1,3 +1,6 @@
 .vscode
 *.exe
 *.class
+*.bat
+*.py
+*.txt
