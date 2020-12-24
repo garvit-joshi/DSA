@@ -4,3 +4,6 @@
 *.bat
 *.py
 *.txt
+*.doc
+*.pdf
+*.docx
