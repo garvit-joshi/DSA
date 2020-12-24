@@ -1,4 +1,4 @@
-public class Implementation {
+public class InOrder {
     public static void main(String[] args) {
         Node root= new Node(10);
         root.left= new Node(20);
@@ -11,5 +11,14 @@ public class Implementation {
         root.right.left=new Node(25);
         root.right.right.right=new Node(25);
         root.right.right.left=new Node(25);
+    }
+    static void inOrder(Node root)
+    {
+        if(root!=null)
+        {
+            inOrder(root.left);
+            System.out.println(root.key+" ");
+            inOrder(root.right);
+        }
     }
 }

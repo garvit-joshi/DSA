@@ -7,7 +7,7 @@ public class Node {
         key = k;
         left=right=null;
     }
-    void inOrder(Node root)
+    static void inOrder(Node root)
     {
         if(root!=null)
         {
@@ -16,7 +16,7 @@ public class Node {
             inOrder(root.right);
         }
     }
-    void preOrder(Node root)
+    static void preOrder(Node root)
     {
         if(root!=null)
         {
@@ -25,7 +25,7 @@ public class Node {
             preOrder(root.right);
         }
     }
-    void postOrder(Node root)
+    static void postOrder(Node root)
     {
         if(root!=null)
         {
@@ -34,7 +34,7 @@ public class Node {
             System.out.println(root.key+" ");
         }
     }
-    int getHeight(Node root)
+    static int getHeight(Node root)
     {
         /**
          * Returns the max. height of tree
@@ -46,7 +46,7 @@ public class Node {
         else
             return Math.max(getHeight(root.left),getHeight(root.right))+1;
     }
-    void printKthDigit(Node root, int k) {
+    static void printKthDigits(Node root, int k) {
         /**
          * Takes 'k' as argument and prints
          * all Kth Element away from root.
@@ -56,8 +56,8 @@ public class Node {
         if (k==1)
             System.out.println(root.key+" ");
         else {
-            printKthDigit(root.left, k-1);
-            printKthDigit(root.right, k-1);
+            printKthDigits(root.left, k-1);
+            printKthDigits(root.right, k-1);
         }
     }
 }

@@ -1,4 +1,4 @@
-public class Implementation {
+public class PostOrder {
     public static void main(String[] args) {
         Node root= new Node(10);
         root.left= new Node(20);
@@ -11,5 +11,14 @@ public class Implementation {
         root.right.left=new Node(25);
         root.right.right.right=new Node(25);
         root.right.right.left=new Node(25);
+    }
+    static void postOrder(Node root)
+    {
+        if(root!=null)
+        {
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.println(root.key+" ");
+        }
     }
 }
