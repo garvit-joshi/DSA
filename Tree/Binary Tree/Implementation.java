@@ -11,5 +11,11 @@ public class Implementation {
         root.right.left=new Node(25);
         root.right.right.right=new Node(25);
         root.right.right.left=new Node(25);
+        System.out.println("Pre Order:");
+        Node.preOrder(root);
+        System.out.println("Post Order:");
+        Node.postOrder(root);
+        System.out.println("In Order:");
+        Node.inOrder(root);
     }
 }

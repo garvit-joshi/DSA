@@ -60,4 +60,41 @@ public class Node {
             printKthDigits(root.right, k-1);
         }
     }
+    static int getSize(Node root)
+    {
+        /**
+         * gets no. of elements in a binary tree
+         * Time Complexity: O(n)
+         * Aux. Space: O(h)
+         */
+        if(root == null)
+            return 0;
+        return 1+getSize(root.left)+getHeight(root.right);
+    }
+    static int getMax(Node root)
+    {
+        /**
+         * Returns max. value in a tree
+         * Time Complexity: O(n)
+         * Aux. Space: 
+         */
+        if(root == null)
+            return Integer.MIN_VALUE;
+        return Math.max(root.key,Math.max(getMax(root.left),getMax(root.right)));
+    }
+    public static boolean childrenSum(Node root) {
+        /**
+         * Returns true if Tree follows Children Sum Property
+         */
+        if(root==null)
+            return true;
+        if(root.left==null && root.right==null)
+            return true;
+        int sum=0;
+        if(root.left!=null)
+            sum+=root.left.key;
+        if(root.right!=null)
+            sum+=root.right.key;
+        return (root.key==sum && childrenSum(root.left) && childrenSum(root.right));
+    }
 }
