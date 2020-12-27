@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Node {
     int key;
     Node left;
@@ -96,5 +99,31 @@ public class Node {
         if(root.right!=null)
             sum+=root.right.key;
         return (root.key==sum && childrenSum(root.left) && childrenSum(root.right));
+    }
+    public static int maxWidth(Node root) {
+        /**
+         * Returns Max width of a binary tree
+         * Uses BFS
+         * Time Complexity: O(n)
+         */
+        if (root==null)
+            return 0;
+        Queue<Node> discovered= new LinkedList<Node>();
+        discovered.add(root);
+        int res=0;
+        while(!discovered.isEmpty())
+        {
+            int count=discovered.size();
+            res=Math.max(res, count);
+            for(int i=0;i<count;i++) {
+                Node curr = discovered.poll();
+                if(curr.left!=null)
+                    discovered.add(curr.left);
+                if(curr.right!=null)
+                    discovered.add(curr.right);
+
+            }
+        }
+        return res;
     }
 }
